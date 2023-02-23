@@ -4,6 +4,11 @@
   "private": true,
   "homepage": "https://goitacademy.github.io/goit-react-hw-07-phonebook/",
   "dependencies": {
+    "@redux-devtools/extension": "^3.2.5",
+    "@reduxjs/toolkit": "^1.9.3",
+    "styled-components": "^5.3.6",
+    "react-redux": "^8.0.5",
+    "nanoid": "^4.0.1",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
