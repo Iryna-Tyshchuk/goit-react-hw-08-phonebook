@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Button = styled.button`
   text-transform: capitalize;
-  width: 150px;
+  width: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
