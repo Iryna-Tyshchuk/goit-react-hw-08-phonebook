@@ -3,7 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 
 import { fetchContacts } from 'redux/contacts/operations';
-import { selectContacts, selectError, selectLoading } from 'redux/selectors';
+import {
+  selectContacts,
+  selectError,
+  selectLoading,
+} from 'redux/contacts/selectors';
 
 import { ContactForm } from '../ContactForm.jsx/ContactForm';
 import { ContactList } from '../ContactList/ContactList';
