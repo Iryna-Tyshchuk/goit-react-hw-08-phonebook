@@ -2,27 +2,32 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 
-import { fetchContacts } from 'redux/contacts/operations';
+import { getContactsRequest } from 'redux/contacts/operations';
 import {
+  selectContactError,
   selectContacts,
-  selectError,
-  selectLoading,
+  selectContactStatus,
 } from 'redux/contacts/selectors';
 
 import { Loader } from 'components/Loader/Loader';
 import { Filter } from 'components/Filter/Filter';
 import { ContactList } from 'components/ContactList/ContactList';
 import { ContactForm } from 'components/ContactForm.jsx/ContactForm';
+import { selectIsLoggedIn } from 'redux/auth/selectors';
+import WithAuthRedirect from 'HOC/WithAuthRedirect';
 
-export default function ContactsPage() {
-  const contacts = useSelector(selectContacts);
-  const isLoading = useSelector(selectLoading);
-  const error = useSelector(selectError);
+function ContactsPage() {
   const dispatch = useDispatch();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+  const contacts = useSelector(selectContacts);
+  const status = useSelector(selectContactStatus);
+  const error = useSelector(selectContactError);
 
   useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+    if (!isLoggedIn) return;
+
+    dispatch(getContactsRequest());
+  }, [dispatch, isLoggedIn]);
 
   useEffect(() => {
     if (error) {
@@ -35,7 +40,7 @@ export default function ContactsPage() {
       <h1 style={{ fontSize: '32px' }}>Phone book</h1>
       <ContactForm />
       <h2 style={{ fontSize: '32px' }}>Contacts</h2>
-      {contacts.length !== 0 ? (
+      {contacts?.length !== 0 ? (
         <>
           <Filter />
           <ContactList />
@@ -44,7 +49,8 @@ export default function ContactsPage() {
         <p>You haven't any contacts</p>
       )}
 
-      {isLoading && <Loader />}
+      {status === 'pending' && <Loader />}
     </>
   );
 }
+export default WithAuthRedirect(ContactsPage, '/sign-in');

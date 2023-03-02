@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { selectContacts } from 'redux/contacts/selectors';
-import { addContact } from 'redux/contacts/operations';
+import { addContactRequest } from 'redux/contacts/operations';
 
 import { Button } from 'components/Button/Button';
 import { Input } from '../Input/Input';
@@ -30,7 +30,7 @@ export function ContactForm() {
       alert(`Contact ${name} is already exists!`);
       return false;
     }
-    dispatch(addContact({ name: name.trim(), number }));
+    dispatch(addContactRequest({ name: name.trim(), number }));
 
     setName('');
     setNumber('');
