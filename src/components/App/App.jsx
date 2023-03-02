@@ -39,7 +39,7 @@ export function App() {
                       <>
                         <ul style={{ display: 'flex', gap: 10 }}>
                           <li>
-                            <NavLink to={'/'}>HOME</NavLink>
+                            <NavLink to={'/'}>HOME тест</NavLink>
                           </li>
 
                           <li>
