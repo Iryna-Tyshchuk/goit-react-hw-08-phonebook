@@ -1,52 +1,53 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { toast } from 'react-toastify';
-
-import { fetchContacts } from 'redux/contacts/operations';
-import {
-  selectContacts,
-  selectError,
-  selectLoading,
-} from 'redux/contacts/selectors';
-
-import { ContactForm } from '../ContactForm.jsx/ContactForm';
-import { ContactList } from '../ContactList/ContactList';
-import { Filter } from '../Filter/Filter';
-import { Loader } from 'components/Loader/Loader';
-
-import { StyledApp } from './App.styled';
+import { Navigate, NavLink, Outlet, Route, Routes } from 'react-router-dom';
+import ContactsPage from 'pages/ContactsPage';
+import HomePage from 'pages/HomePage';
+import SignUpPage from 'pages/SignUpPage';
+import { Box } from './App.styled';
 
 export function App() {
-  const contacts = useSelector(selectContacts);
-  const isLoading = useSelector(selectLoading);
-  const error = useSelector(selectError);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
-
-  useEffect(() => {
-    if (error) {
-      toast.error('Sorry, something went wrong');
-    }
-  }, [error]);
-
   return (
-    <StyledApp>
-      <h1 style={{ fontSize: '32px' }}>Phone book</h1>
-      <ContactForm />
-      <h2 style={{ fontSize: '32px' }}>Contacts</h2>
-      {contacts.length !== 0 ? (
-        <>
-          <Filter />
-          <ContactList />
-        </>
-      ) : (
-        <p>You haven't any contacts</p>
-      )}
-
-      {isLoading && <Loader />}
-    </StyledApp>
+    <Box>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <header>
+                <div style={{ display: 'flex', gap: 10 }}>
+                  <nav>
+                    <ul style={{ display: 'flex', gap: 10 }}>
+                      <li>
+                        <NavLink to={'/'}>HOME</NavLink>
+                      </li>
+                      <li>
+                        <NavLink to={'/login'}>LOGIN</NavLink>
+                      </li>
+                      <li>
+                        <NavLink to={'/register'}>SIGN UP</NavLink>
+                      </li>
+                      <li>
+                        <NavLink to={'/contacts'}>CONTACTS</NavLink>
+                      </li>
+                    </ul>
+                  </nav>
+                  <div>
+                    USER MENU <button type="button">LOG OUT</button>
+                  </div>
+                </div>
+              </header>
+              <main>
+                <Outlet />
+              </main>
+            </>
+          }
+        >
+          <Route index element={<HomePage />} />
+          <Route path="login" element={<div>SIGN UP PAGE</div>} />
+          <Route path="register" element={<SignUpPage />} />
+          <Route path="contacts" element={<ContactsPage />} />
+          <Route path="*" element={<Navigate to={'/'} />} />
+        </Route>
+      </Routes>
+    </Box>
   );
 }
