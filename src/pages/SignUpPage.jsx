@@ -35,6 +35,7 @@ const SignUpPage = () => {
       <section>
         <div>
           <h1>Register page</h1>
+          {error !== null && <p>Oops, some error occured... {error}</p>}
           <SignUpForm onSubmit={handleRegister} />
         </div>
       </section>
