@@ -32,7 +32,7 @@ const SignUpPage = () => {
   };
 
   return (
-    <>
+    <main>
       <section>
         <div>
           <h1 className={css.hidden}>Register page</h1>
@@ -40,7 +40,7 @@ const SignUpPage = () => {
           <SignUpForm onSubmit={handleRegister} />
         </div>
       </section>
-    </>
+    </main>
   );
 };
 

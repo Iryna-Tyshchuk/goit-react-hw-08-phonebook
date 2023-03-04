@@ -1,14 +1,15 @@
-import { useEffect } from 'react';
+import { lazy, useEffect } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { getCurrentUserRequest } from 'redux/auth/operations';
 
-import HomePage from 'pages/HomePage';
-import SignUpPage from 'pages/SignUpPage';
-import ContactsPage from 'pages/ContactsPage';
-import SignInPage from 'pages/SignInPage';
 import { SharedLayout } from 'components/SharedLayout/SharedLayout';
 import { Box } from './App.styled';
+
+const HomePage = lazy(() => import('pages/HomePage'));
+const SignUpPage = lazy(() => import('pages/SignUpPage'));
+const ContactsPage = lazy(() => import('pages/ContactsPage'));
+const SignInPage = lazy(() => import('pages/SignInPage'));
 
 export function App() {
   const dispatch = useDispatch();

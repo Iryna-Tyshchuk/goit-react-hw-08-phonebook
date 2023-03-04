@@ -37,7 +37,7 @@ function ContactsPage() {
   }, [error]);
 
   return (
-    <>
+    <main>
       <h1 className={css.hidden}>Phone book</h1>
       <h2>Add new contact</h2>
       <ContactForm />
@@ -52,7 +52,7 @@ function ContactsPage() {
       )}
 
       {status === 'pending' && <Loader />}
-    </>
+    </main>
   );
 }
 export default WithAuthRedirect(ContactsPage, '/login');

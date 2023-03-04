@@ -1,9 +1,11 @@
-// import { Loader } from 'components/Loader/Loader';
-// import { Suspense } from 'react';
-import { Button } from 'components/Button/Button';
-import { useDispatch, useSelector } from 'react-redux';
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
+
+import { useDispatch, useSelector } from 'react-redux';
 import { logOutRequest } from 'redux/auth/operations';
+
+import { Loader } from 'components/Loader/Loader';
+import { Button } from 'components/Button/Button';
 import { selectIsLoggedIn, selectUserData } from 'redux/auth/selectors';
 import { Container, Header, Link } from './SharedLayout.styled';
 
@@ -25,7 +27,7 @@ export const SharedLayout = () => {
               <Link to={'/contacts'}>CONTACTS</Link>
               <span>HELLO, {userData.name}</span>
               <Button type="button" onClick={handleLogOut}>
-                LOG OUT
+                Log out
               </Button>
             </>
           ) : (
@@ -37,13 +39,9 @@ export const SharedLayout = () => {
         </nav>
       </Header>
 
-      <main>
+      <Suspense fallback={<Loader />}>
         <Outlet />
-      </main>
-
-      {/* <Suspense fallback={<Loader />}>
-        <Outlet />
-      </Suspense> */}
+      </Suspense>
     </Container>
   );
 };

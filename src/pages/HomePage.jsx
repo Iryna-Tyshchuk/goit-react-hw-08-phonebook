@@ -1,6 +1,6 @@
 const HomePage = () => {
   return (
-    <>
+    <main>
       <section>
         <div>
           <h1>Phone book</h1>
@@ -11,7 +11,7 @@ const HomePage = () => {
           </p>
         </div>
       </section>
-    </>
+    </main>
   );
 };
 

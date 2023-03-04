@@ -24,11 +24,11 @@ function SignInPage() {
   };
 
   return (
-    <div>
+    <main>
       <h1 className={css.hidden}>Sign-in page</h1>
       {error !== null && <p>Oops, some error occured... {error}</p>}
       <SignUpForm onSubmit={handleLogin} isLoginForm />
-    </div>
+    </main>
   );
 }
 
