@@ -8,4 +8,7 @@ export const Input = styled.input`
   border-radius: 3px;
   width: 200px;
   height: 20px;
+  &:active {
+    border: none;
+  }
 `;
