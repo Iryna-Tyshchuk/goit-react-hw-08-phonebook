@@ -19,6 +19,8 @@ export const Header = styled.header`
   > nav {
     display: flex;
     gap: 12px;
+    text-transform: uppercase;
+    align-items: center;
   }
 `;
 
