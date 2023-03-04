@@ -31,33 +31,33 @@ function SignUpForm({ onSubmit, isLoginForm = false }) {
         <h2>{isLoginForm ? 'Sign In' : 'Sign Up'}</h2>
         {isLoginForm ? null : (
           <label>
-            <span>Ім'я: </span>
+            <span>Name: </span>
             <input
               type="text"
               name="name"
-              placeholder={"Введіть ім'я"}
+              placeholder={'Enter your name'}
               ref={nameInputRef}
               required
             />
           </label>
         )}
         <label>
-          <span>Емейл: </span>
+          <span>E-mail: </span>
           <input
             type="email"
             name="email"
-            placeholder={'Введіть cвій e-mail'}
+            placeholder={'Enter your e-mail'}
             ref={emailInputRef}
             required
           />
         </label>
         <label>
-          <span>Пароль: </span>
+          <span>Password: </span>
           <input
             type="password"
             name="password"
             minLength={7}
-            placeholder={'Введіть пароль'}
+            placeholder={'Enter your password'}
             ref={passwordInputRef}
             required
           />

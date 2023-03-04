@@ -14,16 +14,11 @@ export const Header = styled.header`
   gap: 12px;
   padding: 8px 0;
   margin-bottom: 16px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #87ece9;
 
   > nav {
     display: flex;
   }
-`;
-
-export const Logo = styled.p`
-  font-weight: 700;
-  margin: 0;
 `;
 
 export const Link = styled(NavLink)`
@@ -32,9 +27,12 @@ export const Link = styled(NavLink)`
   text-decoration: none;
   color: black;
   font-weight: 500;
+  @media screen and (min-width: 768px) {
+    font-weight: 400;
+  }
 
   &.active {
     color: white;
-    background-color: #0011ff;
+    background-color: #19f1ea;
   }
 `;

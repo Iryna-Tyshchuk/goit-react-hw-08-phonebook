@@ -39,7 +39,7 @@ export function ContactForm() {
   return (
     <StyledForm onSubmit={handleSubmit}>
       <label>
-        <p style={{ fontSize: '32px' }}>Name:</p>
+        <p>Name:</p>
         <Input
           type="text"
           name="name"
@@ -51,7 +51,7 @@ export function ContactForm() {
         />
       </label>
       <label>
-        <p style={{ fontSize: '32px' }}>Number:</p>
+        <p>Number:</p>
         <Input
           type="tel"
           name="number"

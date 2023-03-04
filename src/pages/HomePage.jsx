@@ -3,11 +3,11 @@ const HomePage = () => {
     <>
       <section>
         <div>
-          <h1>Title</h1>
+          <h1>Phone book</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-            necessitatibus quasi explicabo sint earum porro tempora asperiores
-            placeat impedit accusantium.
+            Everything you need to manage your contacts. The application will
+            help you quickly find the desired contact and keep order in your
+            address book.
           </p>
         </div>
       </section>

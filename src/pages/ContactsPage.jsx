@@ -15,6 +15,7 @@ import { ContactList } from 'components/ContactList/ContactList';
 import { ContactForm } from 'components/ContactForm.jsx/ContactForm';
 import { selectIsLoggedIn } from 'redux/auth/selectors';
 import WithAuthRedirect from 'HOC/WithAuthRedirect';
+import css from '../components/App/App.module.css';
 
 function ContactsPage() {
   const dispatch = useDispatch();
@@ -37,9 +38,9 @@ function ContactsPage() {
 
   return (
     <>
-      <h1 style={{ fontSize: '32px' }}>Phone book</h1>
+      <h1 className={css.hidden}>Phone book</h1>
       <ContactForm />
-      <h2 style={{ fontSize: '32px' }}>Contacts</h2>
+      <h2>Contacts</h2>
       {contacts?.length !== 0 ? (
         <>
           <Filter />

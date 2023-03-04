@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { selectAuthError, selectIsLoggedIn } from 'redux/auth/selectors';
 import { loginRequest } from 'redux/auth/operations';
 import SignUpForm from 'components/Forms/SignUpForm/SignUpForm';
+import css from '../components/App/App.module.css';
 
 function SignInPage() {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ function SignInPage() {
 
   return (
     <div>
+      <h1 className={css.hidden}>Sign-in page</h1>
       {error !== null && <p>Oops, some error occured... {error}</p>}
       <SignUpForm onSubmit={handleLogin} isLoginForm />
     </div>

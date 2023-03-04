@@ -13,7 +13,7 @@ export const Filter = () => {
 
   return (
     <div>
-      <p style={{ fontSize: '32px' }}>Find contact by name</p>
+      <p>Find contact by name</p>
       <Input type="text" name="filter" value={filter} onChange={handleChange} />
     </div>
   );
