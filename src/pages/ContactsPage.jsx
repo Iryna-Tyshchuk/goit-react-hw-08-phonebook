@@ -53,4 +53,4 @@ function ContactsPage() {
     </>
   );
 }
-export default WithAuthRedirect(ContactsPage, '/sign-in');
+export default WithAuthRedirect(ContactsPage, '/login');
