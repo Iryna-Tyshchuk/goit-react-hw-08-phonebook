@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgoit_react_hw_08_phonebook=self.webpackChunkgoit_react_hw_08_phonebook||[]).push([[983],{3983:function(e,n,o){o.r(n);var i=o(184);n.default=function(){return(0,i.jsx)("main",{children:(0,i.jsx)("section",{children:(0,i.jsxs)("div",{children:[(0,i.jsx)("h1",{children:"Phone book"}),(0,i.jsx)("p",{children:"Everything you need to manage your contacts. The application will help you quickly find the desired contact and keep order in your address book."})]})})})}}}]);
+//# sourceMappingURL=983.bbc1934b.chunk.js.map
