@@ -15,12 +15,12 @@ export const Button = styled.button`
   border: ${p => p.theme.borders.normal};
   border-radius: ${p => p.theme.radii.normal};
   background-color: ${p => {
-    return p.disabled ? p.theme.colors.muted : p.theme.colors.primary;
+    return p.disabled ? p.theme.colors.muted : '#19f1ea';
   }};
   color: ${p => p.theme.colors.white};
   cursor: pointer;
   :hover:not(:disabled),
   :focus:not(:disabled) {
-    background-color: ${p => p.theme.colors.secondary};
+    background-color: #15ccc6;
   }
 `;

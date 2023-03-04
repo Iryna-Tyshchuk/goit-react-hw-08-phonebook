@@ -1,5 +1,6 @@
 // import { Loader } from 'components/Loader/Loader';
 // import { Suspense } from 'react';
+import { Button } from 'components/Button/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 import { logOutRequest } from 'redux/auth/operations';
@@ -23,9 +24,9 @@ export const SharedLayout = () => {
             <>
               <Link to={'/contacts'}>CONTACTS</Link>
               <span>HELLO, {userData.name}</span>
-              <button type="button" onClick={handleLogOut}>
+              <Button type="button" onClick={handleLogOut}>
                 LOG OUT
-              </button>
+              </Button>
             </>
           ) : (
             <>

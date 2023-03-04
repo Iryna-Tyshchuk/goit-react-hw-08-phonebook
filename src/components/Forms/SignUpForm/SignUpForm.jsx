@@ -5,6 +5,8 @@ import { selectStatus } from 'redux/auth/selectors';
 
 import { StyledForm } from './SignUpForm.styled';
 import { Loader } from 'components/Loader/Loader';
+import { Input } from 'components/Input/Input';
+import { Button } from 'components/Button/Button';
 
 function SignUpForm({ onSubmit, isLoginForm = false }) {
   const nameInputRef = useRef();
@@ -32,7 +34,7 @@ function SignUpForm({ onSubmit, isLoginForm = false }) {
         {isLoginForm ? null : (
           <label>
             <span>Name: </span>
-            <input
+            <Input
               type="text"
               name="name"
               placeholder={'Enter your name'}
@@ -43,7 +45,7 @@ function SignUpForm({ onSubmit, isLoginForm = false }) {
         )}
         <label>
           <span>E-mail: </span>
-          <input
+          <Input
             type="email"
             name="email"
             placeholder={'Enter your e-mail'}
@@ -53,7 +55,7 @@ function SignUpForm({ onSubmit, isLoginForm = false }) {
         </label>
         <label>
           <span>Password: </span>
-          <input
+          <Input
             type="password"
             name="password"
             minLength={7}
@@ -63,9 +65,9 @@ function SignUpForm({ onSubmit, isLoginForm = false }) {
           />
         </label>
 
-        <button disabled={status === 'pending'} type="submit">
+        <Button disabled={status === 'pending'} type="submit">
           {isLoginForm ? 'Sign In' : 'Sign Up'}
-        </button>
+        </Button>
       </StyledForm>
       {status === 'pending' && <Loader />}
     </>

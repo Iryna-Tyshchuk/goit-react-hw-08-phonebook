@@ -6,4 +6,6 @@ export const Input = styled.input`
   background: papayawhip;
   border: none;
   border-radius: 3px;
+  width: 200px;
+  height: 20px;
 `;
