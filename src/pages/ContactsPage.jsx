@@ -39,6 +39,7 @@ function ContactsPage() {
   return (
     <>
       <h1 className={css.hidden}>Phone book</h1>
+      <h2>Add new contact</h2>
       <ContactForm />
       <h2>Contacts</h2>
       {contacts?.length !== 0 ? (

@@ -8,8 +8,9 @@ export const ContactItem = ({ name, number, id }) => {
   return (
     <>
       <li style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <p style={{ fontSize: '16px' }}> {name}</p>
-        <p style={{ fontSize: '16px' }}> {number}</p>
+        <p style={{ fontSize: '16px' }}>
+          {name}: {number}
+        </p>
         <Button onClick={() => dispatch(deleteContactRequest(id))}>
           Delete
         </Button>
